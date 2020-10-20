@@ -17,8 +17,8 @@ class OrderTests extends TestCase{
 
     protected function setUp(): void
     {
-        $this->key = "rTaxx56cCrEjdhfGsvaJMqav7gG9ux6yvLgxc6TNvjPKbDBnQe";
-        $this->storeId  = 24945;
+        $this->key = "";
+        $this->storeId  = "";
     }
 
     public function testConnectionIsSuccessfull(){
