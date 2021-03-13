@@ -7,9 +7,14 @@ use WebforceHQ\OrderDesk\Models\InventoryItem;
 
 class InventoryItemTests extends TestCase{
 
-    private $key      = "";
-    private $storeId  = "";
-    public $objectId;
+    private $key;
+    private $storeId;
+
+    protected function setUp(): void
+    {
+        $this->key = "";
+        $this->storeId  = "";
+    }
     
     public function testConnectionIsSuccessfull(){
         $client = new Client($this->storeId, $this->key);    

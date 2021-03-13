@@ -14,11 +14,13 @@ class OrderTests extends TestCase{
 
     private $key;
     private $storeId;
+    private $orderId;
 
     protected function setUp(): void
     {
         $this->key = "";
         $this->storeId  = "";
+        $this->orderId = uniqid();
     }
 
     public function testConnectionIsSuccessfull(){
@@ -32,7 +34,7 @@ class OrderTests extends TestCase{
         $response = $this->store($order);
         $this->assertTrue($response->success);
         $order->setId($response->body->order->id);
-        $this->destroy($order);
+        //$this->destroy($order);
     }
 
     public function testReadOrder(){
@@ -83,7 +85,7 @@ class OrderTests extends TestCase{
 
     private function getOrderDemo(){
         $order = new Order;
-        $order->setSourceId(1);
+        $order->setSourceId($this->orderId);
         $order->setSourceName("WebforceHQ");
         $order->setEmail("demo@mail.com");
         $order->setShippingMethod("FedEx");
